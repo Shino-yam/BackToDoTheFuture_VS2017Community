@@ -65,8 +65,17 @@ namespace BackToDoTheFuture
             return;
         }
 
+        public void SetIsNotified()
+        {
+            this.isNotified = true;
+
+            return;
+        }
+
         public void SetToDoData(string[] todo)
         {
+            this.todoList.Clear();
+
             this.todoList.AddRange(todo);
 
             return;
@@ -81,6 +90,17 @@ namespace BackToDoTheFuture
             _wmp.URL = Directory.GetParent(nowPath) + "\\BTDTF_sound\\" + SOUND_FILE_NAME;
             _wmp.Controls.play();
             
+            return;
+        }
+
+
+        /// <summary>
+        /// 通知音の停止
+        /// </summary>
+        public void StopSound()
+        {
+            _wmp.Controls.Stop();
+
             return;
         }
 

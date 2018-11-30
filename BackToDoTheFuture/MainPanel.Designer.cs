@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonBlinkStop = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxNotifiedToDo = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxToDoDetail = new System.Windows.Forms.TextBox();
             this.buttonToDoSet = new System.Windows.Forms.Button();
@@ -61,9 +64,6 @@
             this.labelPresentMS = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.timerGetPresent = new System.Windows.Forms.Timer(this.components);
-            this.textBoxNotifiedToDo = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.buttonBlinkStop = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +111,46 @@
             this.panel1.Size = new System.Drawing.Size(947, 527);
             this.panel1.TabIndex = 0;
             // 
+            // buttonBlinkStop
+            // 
+            this.buttonBlinkStop.BackColor = System.Drawing.Color.Black;
+            this.buttonBlinkStop.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBlinkStop.ForeColor = System.Drawing.Color.Red;
+            this.buttonBlinkStop.Location = new System.Drawing.Point(808, 477);
+            this.buttonBlinkStop.Name = "buttonBlinkStop";
+            this.buttonBlinkStop.Size = new System.Drawing.Size(127, 40);
+            this.buttonBlinkStop.TabIndex = 32;
+            this.buttonBlinkStop.Text = "Blink Stop";
+            this.buttonBlinkStop.UseVisualStyleBackColor = false;
+            this.buttonBlinkStop.Click += new System.EventHandler(this.buttonBlinkStop_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Black;
+            this.label16.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.DarkGray;
+            this.label16.Location = new System.Drawing.Point(297, 483);
+            this.label16.Name = "label16";
+            this.label16.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label16.Size = new System.Drawing.Size(160, 22);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "NOTIFIED TODO";
+            // 
+            // textBoxNotifiedToDo
+            // 
+            this.textBoxNotifiedToDo.BackColor = System.Drawing.Color.Black;
+            this.textBoxNotifiedToDo.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxNotifiedToDo.ForeColor = System.Drawing.Color.Red;
+            this.textBoxNotifiedToDo.Location = new System.Drawing.Point(15, 432);
+            this.textBoxNotifiedToDo.Name = "textBoxNotifiedToDo";
+            this.textBoxNotifiedToDo.ReadOnly = true;
+            this.textBoxNotifiedToDo.Size = new System.Drawing.Size(920, 39);
+            this.textBoxNotifiedToDo.TabIndex = 30;
+            this.textBoxNotifiedToDo.TabStop = false;
+            this.textBoxNotifiedToDo.Text = "通知されたToDoがありません";
+            this.textBoxNotifiedToDo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -131,8 +171,10 @@
             this.textBoxToDoDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.textBoxToDoDetail.Location = new System.Drawing.Point(12, 158);
             this.textBoxToDoDetail.Name = "textBoxToDoDetail";
+            this.textBoxToDoDetail.ReadOnly = true;
             this.textBoxToDoDetail.Size = new System.Drawing.Size(920, 39);
             this.textBoxToDoDetail.TabIndex = 28;
+            this.textBoxToDoDetail.TabStop = false;
             this.textBoxToDoDetail.Text = "登録されているToDoがありません。";
             this.textBoxToDoDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -169,8 +211,10 @@
             this.textBoxPresentSecond.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPresentSecond.Location = new System.Drawing.Point(804, 288);
             this.textBoxPresentSecond.Name = "textBoxPresentSecond";
+            this.textBoxPresentSecond.ReadOnly = true;
             this.textBoxPresentSecond.Size = new System.Drawing.Size(128, 71);
             this.textBoxPresentSecond.TabIndex = 22;
+            this.textBoxPresentSecond.TabStop = false;
             this.textBoxPresentSecond.Text = "--";
             this.textBoxPresentSecond.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -259,8 +303,10 @@
             this.textBoxPresentHour.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPresentHour.Location = new System.Drawing.Point(515, 288);
             this.textBoxPresentHour.Name = "textBoxPresentHour";
+            this.textBoxPresentHour.ReadOnly = true;
             this.textBoxPresentHour.Size = new System.Drawing.Size(128, 71);
             this.textBoxPresentHour.TabIndex = 15;
+            this.textBoxPresentHour.TabStop = false;
             this.textBoxPresentHour.Text = "--";
             this.textBoxPresentHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -271,8 +317,10 @@
             this.textBoxPresentMinute.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPresentMinute.Location = new System.Drawing.Point(661, 288);
             this.textBoxPresentMinute.Name = "textBoxPresentMinute";
+            this.textBoxPresentMinute.ReadOnly = true;
             this.textBoxPresentMinute.Size = new System.Drawing.Size(128, 71);
             this.textBoxPresentMinute.TabIndex = 14;
+            this.textBoxPresentMinute.TabStop = false;
             this.textBoxPresentMinute.Text = "--";
             this.textBoxPresentMinute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -283,8 +331,10 @@
             this.textBoxPresentDay.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPresentDay.Location = new System.Drawing.Point(377, 288);
             this.textBoxPresentDay.Name = "textBoxPresentDay";
+            this.textBoxPresentDay.ReadOnly = true;
             this.textBoxPresentDay.Size = new System.Drawing.Size(116, 71);
             this.textBoxPresentDay.TabIndex = 13;
+            this.textBoxPresentDay.TabStop = false;
             this.textBoxPresentDay.Text = "--";
             this.textBoxPresentDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -295,8 +345,10 @@
             this.textBoxPresentYear.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPresentYear.Location = new System.Drawing.Point(176, 288);
             this.textBoxPresentYear.Name = "textBoxPresentYear";
+            this.textBoxPresentYear.ReadOnly = true;
             this.textBoxPresentYear.Size = new System.Drawing.Size(195, 71);
             this.textBoxPresentYear.TabIndex = 12;
+            this.textBoxPresentYear.TabStop = false;
             this.textBoxPresentYear.Text = "----";
             this.textBoxPresentYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -307,8 +359,10 @@
             this.textBoxPresentMonth.ForeColor = System.Drawing.Color.Lime;
             this.textBoxPresentMonth.Location = new System.Drawing.Point(12, 288);
             this.textBoxPresentMonth.Name = "textBoxPresentMonth";
+            this.textBoxPresentMonth.ReadOnly = true;
             this.textBoxPresentMonth.Size = new System.Drawing.Size(158, 71);
             this.textBoxPresentMonth.TabIndex = 11;
+            this.textBoxPresentMonth.TabStop = false;
             this.textBoxPresentMonth.Text = "---";
             this.textBoxPresentMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -397,8 +451,10 @@
             this.textBoxToDoHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.textBoxToDoHour.Location = new System.Drawing.Point(515, 41);
             this.textBoxToDoHour.Name = "textBoxToDoHour";
+            this.textBoxToDoHour.ReadOnly = true;
             this.textBoxToDoHour.Size = new System.Drawing.Size(128, 71);
             this.textBoxToDoHour.TabIndex = 4;
+            this.textBoxToDoHour.TabStop = false;
             this.textBoxToDoHour.Text = "--";
             this.textBoxToDoHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -409,8 +465,10 @@
             this.textBoxToDoMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.textBoxToDoMinute.Location = new System.Drawing.Point(661, 41);
             this.textBoxToDoMinute.Name = "textBoxToDoMinute";
+            this.textBoxToDoMinute.ReadOnly = true;
             this.textBoxToDoMinute.Size = new System.Drawing.Size(128, 71);
             this.textBoxToDoMinute.TabIndex = 3;
+            this.textBoxToDoMinute.TabStop = false;
             this.textBoxToDoMinute.Text = "--";
             this.textBoxToDoMinute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -421,8 +479,10 @@
             this.textBoxToDoDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.textBoxToDoDay.Location = new System.Drawing.Point(377, 41);
             this.textBoxToDoDay.Name = "textBoxToDoDay";
+            this.textBoxToDoDay.ReadOnly = true;
             this.textBoxToDoDay.Size = new System.Drawing.Size(116, 71);
             this.textBoxToDoDay.TabIndex = 2;
+            this.textBoxToDoDay.TabStop = false;
             this.textBoxToDoDay.Text = "--";
             this.textBoxToDoDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -433,8 +493,10 @@
             this.textBoxToDoYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.textBoxToDoYear.Location = new System.Drawing.Point(176, 41);
             this.textBoxToDoYear.Name = "textBoxToDoYear";
+            this.textBoxToDoYear.ReadOnly = true;
             this.textBoxToDoYear.Size = new System.Drawing.Size(195, 71);
             this.textBoxToDoYear.TabIndex = 1;
+            this.textBoxToDoYear.TabStop = false;
             this.textBoxToDoYear.Text = "----";
             this.textBoxToDoYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -445,8 +507,10 @@
             this.textBoxToDoMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(150)))), ((int)(((byte)(0)))));
             this.textBoxToDoMonth.Location = new System.Drawing.Point(12, 41);
             this.textBoxToDoMonth.Name = "textBoxToDoMonth";
+            this.textBoxToDoMonth.ReadOnly = true;
             this.textBoxToDoMonth.Size = new System.Drawing.Size(158, 71);
             this.textBoxToDoMonth.TabIndex = 0;
+            this.textBoxToDoMonth.TabStop = false;
             this.textBoxToDoMonth.Text = "---";
             this.textBoxToDoMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -494,44 +558,6 @@
             this.timerGetPresent.Enabled = true;
             this.timerGetPresent.Interval = 500;
             this.timerGetPresent.Tick += new System.EventHandler(this.timerGetPresent_Tick);
-            // 
-            // textBoxNotifiedToDo
-            // 
-            this.textBoxNotifiedToDo.BackColor = System.Drawing.Color.Black;
-            this.textBoxNotifiedToDo.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxNotifiedToDo.ForeColor = System.Drawing.Color.Red;
-            this.textBoxNotifiedToDo.Location = new System.Drawing.Point(15, 432);
-            this.textBoxNotifiedToDo.Name = "textBoxNotifiedToDo";
-            this.textBoxNotifiedToDo.Size = new System.Drawing.Size(920, 39);
-            this.textBoxNotifiedToDo.TabIndex = 30;
-            this.textBoxNotifiedToDo.Text = "通知されたToDoがありません";
-            this.textBoxNotifiedToDo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Black;
-            this.label16.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DarkGray;
-            this.label16.Location = new System.Drawing.Point(297, 483);
-            this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label16.Size = new System.Drawing.Size(160, 22);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "NOTIFIED TODO";
-            // 
-            // buttonBlinkStop
-            // 
-            this.buttonBlinkStop.BackColor = System.Drawing.Color.Black;
-            this.buttonBlinkStop.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBlinkStop.ForeColor = System.Drawing.Color.Red;
-            this.buttonBlinkStop.Location = new System.Drawing.Point(808, 477);
-            this.buttonBlinkStop.Name = "buttonBlinkStop";
-            this.buttonBlinkStop.Size = new System.Drawing.Size(127, 40);
-            this.buttonBlinkStop.TabIndex = 32;
-            this.buttonBlinkStop.Text = "Blink Stop";
-            this.buttonBlinkStop.UseVisualStyleBackColor = false;
-            this.buttonBlinkStop.Click += new System.EventHandler(this.buttonBlinkStop_Click);
             // 
             // MainPanel
             // 

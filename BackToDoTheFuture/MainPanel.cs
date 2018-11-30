@@ -25,7 +25,6 @@ namespace BackToDoTheFuture
         private int presentHour = 0;
         private int presentMinute = 0;
         private int presentSecond = 0;
-        private List<string> todoList = new List<string>();
         private static string notifiedToDo = "";
         private Boolean isBlinkedNotifiedToDo = false;
         ThreadLogics th;
@@ -62,8 +61,12 @@ namespace BackToDoTheFuture
             ToDoSetPanel todoSet = new ToDoSetPanel();
             todoSet.ShowDialog();
 
+            th.SetIsNotified();
+
             // 更新されたデータファイルを読み込む
             this.ReadDataFile();
+
+            this.Refresh();
 
             return;
         }
@@ -77,6 +80,8 @@ namespace BackToDoTheFuture
         private void buttonBlinkStop_Click(object sender, EventArgs e)
         {
             this.isBlinkedNotifiedToDo = false;
+
+            th.StopSound();
 
             this.textBoxNotifiedToDo.ForeColor = Color.Red;
             this.textBoxNotifiedToDo.BackColor = Color.Black;
@@ -152,8 +157,6 @@ namespace BackToDoTheFuture
             // 次のToDoを表示
             ToDoData td = th.SearchNextToDo(dtNow);
 
-            Thread.Sleep(50);
-
             if (td == null)
             {
                 // formに表示
@@ -168,7 +171,7 @@ namespace BackToDoTheFuture
             {
                 // formに表示
                 this.textBoxToDoYear.Text = string.Format("{0,0:D4}", td.GetToDoYear());
-                 this.textBoxToDoMonth.Text = this.monthStr[td.GetToDoMonth()];
+                this.textBoxToDoMonth.Text = this.monthStr[td.GetToDoMonth()];
                 this.textBoxToDoDay.Text = string.Format("{0,0:D2}", td.GetToDoDay());
                 this.textBoxToDoHour.Text = string.Format("{0,0:D2}", td.GetToDoHour());
                 this.textBoxToDoMinute.Text = string.Format("{0,0:D2}", td.GetToDoMinute());
@@ -263,9 +266,7 @@ namespace BackToDoTheFuture
         /// </summary>
         private void ReadDataFile()
         {
-            this.todoList.Clear();
             string[] temp = ToDoData.ReadFile();
-            this.todoList.AddRange(temp);
 
             th.SetToDoData(temp);
 
@@ -283,6 +284,5 @@ namespace BackToDoTheFuture
             // スレッドの終了
             th.SetTaskEnd();
         }
-
     }
 }

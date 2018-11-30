@@ -196,6 +196,8 @@ namespace BackToDoTheFuture
             this.checkedListBoxToDoList.Items.CopyTo(datas, 0);
             ToDoData.WriteFile(datas);
 
+            ToDoData.ReadFile();
+
             return;
         }
 
